@@ -941,7 +941,7 @@ public class DFA {
           String name = SymName(sym);
           if (ignoreCase) name = name.toLowerCase();
           // sym.name stores literals with quotes, e.g. "\"Literal\"",
-          gen.println("\t\tliterals.put(" + name + ", new Integer(" + sym.n + "));");
+          gen.println("\t\tliterals.put(" + name + ", Integer.valueOf(" + sym.n + "));");
         }
       }
     }
