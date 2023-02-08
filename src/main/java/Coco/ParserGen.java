@@ -62,7 +62,7 @@ public class ParserGen {
   StringWriter err;  // generated parser error messages
   String srcName;    // name of attributed grammar file
   String srcDir;     // directory of attributed grammar file
-  ArrayList symSet = new ArrayList();
+  ArrayList<BitSet> symSet = new ArrayList<BitSet>();
 
   Tab tab;           // other Coco objects
   Trace trace;
@@ -144,8 +144,8 @@ public class ParserGen {
 
   int NewCondSet (BitSet s) {
     for (int i = 1; i < symSet.size(); i++) // skip symSet[0] (reserved for union of SYNC sets)
-      if (Sets.Equals(s, (BitSet)symSet.get(i))) return i;
-    symSet.add(s.clone());
+      if (Sets.Equals(s, symSet.get(i))) return i;
+    symSet.add((BitSet)s.clone());
     return symSet.size() - 1;
   }
 
@@ -349,7 +349,7 @@ public class ParserGen {
 
   void InitSets() {
     for (int i = 0; i < symSet.size(); i++) {
-      BitSet s = (BitSet)symSet.get(i);
+      BitSet s = symSet.get(i);
       gen.print("\t\t{");
       int j = 0;
       //foreach (Symbol sym in Symbol.terminals) {
