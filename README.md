@@ -1,4 +1,4 @@
-# Coco/R - Compiler Generator
+# Coco/R for Java - Compiler Generator
 
 Coco/R for Java is a compiler generator that allows you to create a scanner and a parser for a source language, 
 given an attributed grammar. 
