@@ -327,24 +327,24 @@ public class Scanner {
 		start.set(123, 29); 
 		start.set(125, 30); 
 		start.set(Buffer.EOF, -1);
-		literals.put("COMPILER", new Integer(6));
-		literals.put("IGNORECASE", new Integer(7));
-		literals.put("CHARACTERS", new Integer(8));
-		literals.put("TOKENS", new Integer(9));
-		literals.put("PRAGMAS", new Integer(10));
-		literals.put("COMMENTS", new Integer(11));
-		literals.put("FROM", new Integer(12));
-		literals.put("TO", new Integer(13));
-		literals.put("NESTED", new Integer(14));
-		literals.put("IGNORE", new Integer(15));
-		literals.put("PRODUCTIONS", new Integer(16));
-		literals.put("END", new Integer(19));
-		literals.put("ANY", new Integer(23));
-		literals.put("out", new Integer(26));
-		literals.put("WEAK", new Integer(34));
-		literals.put("SYNC", new Integer(39));
-		literals.put("IF", new Integer(40));
-		literals.put("CONTEXT", new Integer(41));
+		literals.put("COMPILER", Integer.valueOf(6));
+		literals.put("IGNORECASE", Integer.valueOf(7));
+		literals.put("CHARACTERS", Integer.valueOf(8));
+		literals.put("TOKENS", Integer.valueOf(9));
+		literals.put("PRAGMAS", Integer.valueOf(10));
+		literals.put("COMMENTS", Integer.valueOf(11));
+		literals.put("FROM", Integer.valueOf(12));
+		literals.put("TO", Integer.valueOf(13));
+		literals.put("NESTED", Integer.valueOf(14));
+		literals.put("IGNORE", Integer.valueOf(15));
+		literals.put("PRODUCTIONS", Integer.valueOf(16));
+		literals.put("END", Integer.valueOf(19));
+		literals.put("ANY", Integer.valueOf(23));
+		literals.put("out", Integer.valueOf(26));
+		literals.put("WEAK", Integer.valueOf(34));
+		literals.put("SYNC", Integer.valueOf(39));
+		literals.put("IF", Integer.valueOf(40));
+		literals.put("CONTEXT", Integer.valueOf(41));
 
 	}
 	

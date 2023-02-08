@@ -1280,7 +1280,7 @@ public class Tab {
 			Symbol sym = (Symbol)nonterminals.get(i);
 			ArrayList list = (ArrayList)xref.get(sym);
 			if (list == null) {list = new ArrayList(); xref.put(sym, list);}
-			list.add(new Integer(- sym.line));
+			list.add(Integer.valueOf(- sym.line));
 		}
 		// collect lines where symbols have been referenced
 		//foreach (Node n in Node.nodes) {
@@ -1289,7 +1289,7 @@ public class Tab {
 			if (n.typ == Node.t || n.typ == Node.wt || n.typ == Node.nt) {
 				ArrayList list = (ArrayList)xref.get(n.sym);
 				if (list == null) {list = new ArrayList(); xref.put(n.sym, list);}
-				list.add(new Integer(n.line));
+				list.add(Integer.valueOf(n.line));
 			}
 		}
 		// print cross reference list
