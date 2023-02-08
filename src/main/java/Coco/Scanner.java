@@ -46,7 +46,7 @@ class Token {
 //-----------------------------------------------------------------------------------
 // Buffer
 //-----------------------------------------------------------------------------------
-class Buffer {
+class Buffer implements AutoCloseable {
 	// This Buffer supports the following cases:
 	// 1) seekable stream (file)
 	//    a) whole stream in buffer
@@ -79,7 +79,7 @@ class Buffer {
 			bufStart = Integer.MAX_VALUE; // nothing in buffer so far
 			if (fileLen > 0) setPos(0); // setup buffer to position 0 (start)
 			else bufPos = 0; // index 0 is already after the file, thus setPos(0) is invalid
-			if (bufLen == fileLen) Close();
+			if (bufLen == fileLen) close();
 		} catch (IOException e) {
 			throw new FatalError("Could not open file " + fileName);
 		}
@@ -99,12 +99,7 @@ class Buffer {
 		b.file = null;
 	}
 
-	protected void finalize() throws Throwable {
-		super.finalize();
-		Close();
-	}
-
-	protected void Close() {
+	public void close() {
 		if (file != null) {
 			try {
 				file.close();
