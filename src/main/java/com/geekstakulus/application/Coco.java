@@ -41,9 +41,16 @@ Coco/R itself) does not fall under the GNU General Public License.
   in the attributed grammar or as a command-line option
   -------------------------------------------------------------------------*/
 
-package Coco;
+package com.geekstakulus.application;
 
 import java.io.File;
+import com.geekstakulus.scanner.Scanner;
+import com.geekstakulus.parser.Parser;
+import com.geekstakulus.trace.Trace;
+import com.geekstakulus.dfa.DFA;
+import com.geekstakulus.table.Tab;
+import com.geekstakulus.generators.ParserGen;
+import com.geekstakulus.errors.FatalError;
 
 public class Coco {
 
@@ -108,5 +115,4 @@ public class Coco {
     }
     System.exit(retVal);
   }
-
 } // end Coco
