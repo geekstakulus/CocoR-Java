@@ -29,14 +29,8 @@ Coco/R itself) does not fall under the GNU General Public License.
 
 package com.geekstakulus.dfa;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.Reader;                /* pdt */
-import java.io.BufferedReader;        /* pdt */
-import java.io.FileReader;            /* pdt */
 import java.io.PrintWriter;           /* pdt */
-import java.io.BufferedWriter;        /* pdt */
-import java.io.FileWriter;            /* pdt */
 import java.util.BitSet;
 import java.util.Map;
 import java.util.List;
@@ -579,10 +573,10 @@ public class DFA {
   String SymName(Symbol sym) {
     if (Character.isLetter(sym.name.charAt(0))) { // real name value is stored in Tab.literals
       //foreach (DictionaryEntry e in Tab.literals)
-      java.util.Iterator iter = tab.literals.entrySet().iterator();
+      java.util.Iterator<Map.Entry<String, Symbol>> iter = tab.literals.entrySet().iterator();
       while (iter.hasNext()) {
-        Map.Entry me = (Map.Entry) iter.next();
-        if ((Symbol) me.getValue() == sym) return (String) me.getKey();
+        Map.Entry<String, Symbol> me = iter.next();
+        if (me.getValue() == sym) return me.getKey();
       }
     }
     return sym.name;
